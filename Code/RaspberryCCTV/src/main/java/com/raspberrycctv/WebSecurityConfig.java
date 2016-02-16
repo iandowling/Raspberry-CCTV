@@ -1,5 +1,6 @@
 package com.raspberrycctv;
 
+import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-    	 .antMatchers("/", "/index", "/webjars/**", "/console/*").permitAll()
+    	 .antMatchers("/", "/index", "/webjars/**", "/home").permitAll()
          .antMatchers("/**").hasAuthority("USER")
          .anyRequest().fullyAuthenticated()
          .and()
@@ -39,9 +40,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          .logoutSuccessUrl("/")
          .permitAll()
          .and()
-         .rememberMe()
-         .and()
-         .csrf().disable();
+         .rememberMe();	
+		
+		http.csrf().disable();
+        http.headers().frameOptions().disable();
         
     }
 
@@ -58,7 +60,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     public void configure(WebSecurity web) throws Exception {
-      web.ignoring().antMatchers("/static/**");
+    	web.ignoring().antMatchers("/static/**");
+      
     }
+    
+    @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+	protected static class ApplicationSecurity extends WebSecurityConfigurerAdapter {
+
+		@Autowired
+		private DataSource dataSource;
+
+		@Override
+		public void configure(AuthenticationManagerBuilder auth) throws Exception {
+			auth.jdbcAuthentication().dataSource(this.dataSource);
+		}
+
+	}
     
 }

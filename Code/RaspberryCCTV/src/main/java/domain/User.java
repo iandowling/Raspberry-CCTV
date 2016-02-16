@@ -1,14 +1,8 @@
 package domain;
 
-import domain.Role;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,12 +29,6 @@ public class User implements UserDetails {
 	@Column(name="username", nullable=false, unique=true)
 	private String username;
 	
-	@Column(name="firstname", nullable=false)
-	private String firstname;
-	
-	@Column(name="surname", nullable=false)
-	private String surname;
-	
 	@Column(name="email", nullable=false)
 	private String email;
 	
@@ -49,18 +37,11 @@ public class User implements UserDetails {
 	@Column(name="password", nullable=false)
 	private String password;
 	
-	@Column(name = "role", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Role role;
-	
-	public User(User user) {
-		this.id = user.id;
-		this.firstname = user.firstname;
-		this.surname   = user.surname;
-		this.username  = user.username;
-		this.email	   = user.email;
-		this.password  = user.password;
-		this.role	   = user.role;
+	public User(long id, String username, String email, String password) {
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
 	}
 	
 	public User() {
@@ -83,22 +64,6 @@ public class User implements UserDetails {
 		this.username = username;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -115,21 +80,11 @@ public class User implements UserDetails {
 		this.password = password;
 	}
 	
-	public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-	
     @Override
     public String toString() {
         return "User[" + "id = " + id +"," + "username = " + username + ","
         		+ "email = " + email.replaceFirst("@.*", "@***") + "," +
-                "password = " + password.substring(0, 10) + "," +
-                "role = " + role +
-                ']';
+                "password = " + password.substring(0, 10) + "," + ']';
     }
 
 	@Override

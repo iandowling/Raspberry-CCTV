@@ -1,26 +1,37 @@
 package controllers;
 
-import java.util.Optional;
-
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+import services.UserService;
+
+@Controller
 public class LoginController {
 	
-	@PreAuthorize("hasAuthority('USER')")
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView getLoginPage(@RequestParam Optional<String> error) {
-        return new ModelAndView("login", "error", error);
+	private UserService userService;
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
-	
-	@PreAuthorize("hasAuthority('USER')")
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public ModelAndView getHomePage(@RequestParam Optional<String> error) {
-		return new ModelAndView("home", "error", error);
+    
+	@RequestMapping("/login")
+	public String getHome(){
+		return "login";
 	}
+	
+	@RequestMapping("/home")
+	public String stdRedirect(){
+		return "redirect:/home";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String list(@PathVariable Long id, Model model){
+        model.addAttribute("user", userService.getUserById(id));
+        return "redirect:/home/";
+    }
 }
