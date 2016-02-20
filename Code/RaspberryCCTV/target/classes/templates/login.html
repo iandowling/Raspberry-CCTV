@@ -72,16 +72,16 @@
 	                    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	                    	<div class="form-group">
 	                    		<label class="sr-only" for="form-email">Username</label>
-	                        	<input type="text" name="username" placeholder="Username..." class="form-username form-control" id="form-username"/>
+	                        	<input type="text" name="username" placeholder="Username..." class="form-username form-control" id="inputUsername"/>
 	                        </div>
 	                        <div class="form-group">
 	                        	<label class="sr-only" for="form-password">Password</label>
-	                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password"/>
+	                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="inputPassword" />
 	                        </div>
-	                        <button type="submit" class="btn">Sign in!</button>
+	                        <button type="submit" class="btn" id="loginButton">Sign in!</button>
 	                    	</form>
 	                    	<br />
-   							<div class="alert alert-danger" role="alert" th:if="${param.error}">
+   							<div class="alert alert-error alert-danger" role="alert" th:if="${param.error}">
 								Invalid username and password.
 							</div>
 							<div class="alert alert-success" role="alert" th:if="${param.logout}">

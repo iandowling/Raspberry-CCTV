@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -19,6 +21,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @ComponentScan(basePackages = "services")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
+	@Autowired
+	DataSource dataSource;
+	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
@@ -40,41 +45,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          .logoutSuccessUrl("/")
          .permitAll()
          .and()
+         .exceptionHandling().accessDeniedPage("/error")
+         .and()
          .rememberMe();	
-		
-		http.csrf().disable();
-        http.headers().frameOptions().disable();
+	
         
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-
-    	auth
-            /*.inMemoryAuthentication()
-                .withUser("admin").password("password").roles("USER");*/
-    	.userDetailsService(userDetailsService())
-        .passwordEncoder(new BCryptPasswordEncoder());
+    	
+//    	JdbcUserDetailsManager userDetailsService = new JdbcUserDetailsManager();
+//        userDetailsService.setDataSource(dataSource);
+//        PasswordEncoder encoder = new BCryptPasswordEncoder();
+//        auth.userDetailsService(userDetailsService).passwordEncoder(encoder);
+    	
+        auth.jdbcAuthentication().dataSource(dataSource)
+		.usersByUsernameQuery(
+			"SELECT * FROM users WHERE username=?");
     		
     }
-    
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-    	web.ignoring().antMatchers("/static/**");
-      
-    }
-    
-    @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
-	protected static class ApplicationSecurity extends WebSecurityConfigurerAdapter {
-
-		@Autowired
-		private DataSource dataSource;
-
-		@Override
-		public void configure(AuthenticationManagerBuilder auth) throws Exception {
-			auth.jdbcAuthentication().dataSource(this.dataSource);
-		}
-
-	}
     
 }

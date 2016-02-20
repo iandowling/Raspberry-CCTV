@@ -1,0 +1,9 @@
+{
+  "name": "raspberrycctv",
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "underscore": "~1.8.3",
+    "backbone"	: "~1.2.3",
+    "bootstrap-css-only": "~3.3.6"
+  }
+}
