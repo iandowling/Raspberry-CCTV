@@ -105,6 +105,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		
 	}
 
+	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 	public void forgotPassword(ForgotPasswordForm form) {
 		

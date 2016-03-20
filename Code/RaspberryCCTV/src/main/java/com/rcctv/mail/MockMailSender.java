@@ -2,7 +2,6 @@ package com.rcctv.mail;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 public class MockMailSender implements MailSender {
 	

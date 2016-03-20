@@ -14,6 +14,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   	<script src="/public/js/home.js"></script>
+  	<script src="/public/js/whammy.js"></script>
 </body>
 
 </html>  
