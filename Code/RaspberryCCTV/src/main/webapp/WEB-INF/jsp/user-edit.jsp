@@ -3,7 +3,7 @@
 <div class="user-edit">
  <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Profile</h3>
+        <h3 class="panel-title">Edit Profile</h3>
     </div>
     <div class="panel-body">
     
@@ -12,10 +12,25 @@
            <div class="form-group">
 			<form:label path="name" class="col-lg-2 control-label">Name</form:label>
 			<div class="col-lg-10">
-				<form:input path="name" class="form-control" placeholder="Roles" />
+				<form:input path="name" class="form-control" placeholder="Edit your profile name." />
 				<form:errors cssClass="error" path="name" />
-				<p class="help-block">Change your display name.</p>
+				<p class="help-block">Edit your profile.</p>
 			</div>
+			
+			<form:label path="email" class="col-lg-2 control-label">Email</form:label>
+			<div class="col-lg-10">
+				<form:input path="email" class="form-control" placeholder="Edit your email." />
+				<form:errors cssClass="error" path="email" />
+				<p class="help-block">Edit your email.</p>
+			</div>
+			
+			<form:label path="password" class="col-lg-2 control-label">Password</form:label>
+			<div class="col-lg-10">
+				<form:input path="password" class="form-control" placeholder="Update your password." />
+				<form:errors cssClass="error" path="password" />
+				<p class="help-block">Update your password.</p>
+			</div>
+			
 		   </div>
 
 			<sec:authorize access="hasRole('ROLE_ADMIN')">

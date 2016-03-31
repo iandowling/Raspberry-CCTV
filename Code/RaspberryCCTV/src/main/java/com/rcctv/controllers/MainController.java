@@ -29,8 +29,6 @@ import com.rcctv.validators.SignupFormValidator;
 @Controller
 public class MainController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
-	
 	private MailSender mailSender;
 	private UserService userService;
 	private SignupFormValidator signupFormValidator;
@@ -69,6 +67,11 @@ public class MainController {
 	@RequestMapping(value = "/raspberrycctv", method = RequestMethod.GET)
 	public String userMain(Model model) {
 		return "user-main";
+	}
+	
+	@RequestMapping(value = "/configuration", method = RequestMethod.GET)
+	public String userConfig(Model model) {
+		return "configuration";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)

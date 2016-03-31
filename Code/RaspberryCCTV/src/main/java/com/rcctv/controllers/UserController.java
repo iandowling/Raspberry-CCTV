@@ -80,33 +80,30 @@ public class UserController {
 		return "redirect:/login";
 	}
 	
-	/*@RequestMapping(value = "/{userId}/changePassword")
-    public String changePassword(@PathVariable("userId") long userId, Model model) {
+	@RequestMapping(value = "/{userId}/delete", method = RequestMethod.GET)
+    public String delete(RedirectAttributes redirectAttributes, HttpServletRequest request) throws ServletException {
     	
-		User user = userService.findOne(userId);
-		UserEditForm form = new UserEditForm();
-		form.setPassword(user.getPassword());
-		form.setRoles(user.getRoles());
-    	model.addAttribute(form);
-    	
-		return "password-edit";
+		Utilities.flash(redirectAttributes, "success", "deleteSuccessful");
+		request.logout();
+
+		return "redirect:/login";
 
     }
-    
-	@RequestMapping(value = "/{userId}/changePassword", method = RequestMethod.POST)
-	public String changePassword(@PathVariable("password") String password,
+	
+	@RequestMapping(value = "/{userId}/delete", method = RequestMethod.POST)
+	public String delete(@PathVariable("userId") long userId,
 			@ModelAttribute("userEditForm") @Valid UserEditForm userEditForm,
 			BindingResult result, RedirectAttributes redirectAttributes,
 			HttpServletRequest request) throws ServletException {
 
 		if (result.hasErrors())
-			return "password-edit";
+			return "user-edit";
 
-		userService.update(password, userEditForm);
-		MyUtil.flash(redirectAttributes, "success", "editSuccessful");
+		userService.delete(userId);
+		Utilities.flash(redirectAttributes, "success", "deleteSuccessful");
 		request.logout();
 
 		return "redirect:/login";
-	}*/
+	}
 	
 }

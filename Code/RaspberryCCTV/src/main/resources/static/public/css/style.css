@@ -192,7 +192,6 @@ header {
     color: #fff;
     width: 100%;
     background-color: #c9c9c9;
-    background-image: url('/public/images/window.gif');
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -334,11 +333,14 @@ footer {
     border-color: #fff;
     color: #000;
     font-color: #000;
-    font-size: 20px;
     background-color: #fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+}
+
+span {
+	font-size: 15px;
 }
 
 .btn-default:hover,
@@ -435,6 +437,8 @@ span[id$=errors] {
 
 #user-main {
 	margin-top: 80px;
+	margin-left: 25%;
+	margin-right: 25%;
 	
 }
 
@@ -472,6 +476,8 @@ img {
 	padding-bottom: 20px;
 }
 
-.btn-group2 {
-	
+.configuration {
+	margin-top: 100px;
+	margin-left: 5%;
+	margin-right: 5%;
 }

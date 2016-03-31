@@ -21,48 +21,15 @@
    	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 	<link rel="shortcut icon" type="image/png" sizes="16x16" href="/public/images/favicon/logo.png"/>
 	<link type="text/javascript" rel="stylesheet" href="/public/js/home.js"/>
+	<link type="text/javascript" rel="stylesheet" href="/public/js/webcam.js"/>
+	<link type="text/javascript" rel="stylesheet" href="/public/js/videoRecorder.js"/>
+	<link type="text/javascript" rel="stylesheet" href="/public/js/whammy.js"/>
 	<link rel="manifest" href="/manifest.json"/>
 	
 	<title>Raspberry CCTV</title>
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-	<!-- Navigation -->
-    <!--  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="/">
-                    <i class="glyphicon glyphicon-eye-open"></i>  <span class="light">Raspberry </span> CCTV 
-                    <br />
-                </a>
-            </div>-->
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <!--  <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section 
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#download">Download</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll"  href="login">Login/Register</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
     
 	<nav class="navbar navbar-custom navbar-static-top" role="navigation">
         <div class="container">
@@ -96,7 +63,8 @@
 	         </sec:authorize>
 	         
 	          <sec:authorize access="isAuthenticated()">
-	          	  <li><a href="/raspberrycctv/">Access Webcam Feed</a></li>
+	          	  <li><a href="/raspberrycctv">Webcam Feed</a></li>
+	          	  <li><a href="/configuration"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
 	              <li class="dropdown">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                      <span class="glyphicon glyphicon-user"></span>

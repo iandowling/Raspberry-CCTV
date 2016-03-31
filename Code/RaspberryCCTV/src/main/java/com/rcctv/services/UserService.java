@@ -23,4 +23,6 @@ public interface UserService {
 
 	public abstract void update(long userId, UserEditForm userEditForm);
 	
+	public abstract void delete(long userId);
+	
 }

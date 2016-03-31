@@ -3,7 +3,7 @@
 <div class="user">
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Profile</h3>
+        <h3 class="panel-title">Edit Profile</h3>
     </div>
     <div class="panel-body">
         <dl class="dl-horizontal">
@@ -19,8 +19,6 @@
 	    <div class="panel-footer">
 	
 	        <a class="btn btn-link" href="/users/${user.id}/edit">Edit</a>
-	        <a class="btn btn-link" href="/users/${user.id}/change-password">Change password</a>
-	        <a class="btn btn-link" href="/users/${user.id}/change-email">Change email address</a>
 	        <a class="btn btn-link" href="/users/${user.id}/delete">Delete user</a>
 	
 	    </div>

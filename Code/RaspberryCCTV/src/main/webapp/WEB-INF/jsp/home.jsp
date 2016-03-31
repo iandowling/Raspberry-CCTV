@@ -7,7 +7,7 @@
                 <br />
                 <h4>A powerful, intuitive and affordable multipurpose security system to protect the ones you love.</h4>
                 <hr></hr>
-                <a href="#video-background" id="toggleVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Change View</a> &nbsp; <a href="signup" class="btn btn-primary btn-xl page-scroll">Get Started</a>
+                <a href="signup" class="btn btn-primary btn-xl page-scroll">Get Started</a> &nbsp;<a href="login" id="login" class="btn btn-primary btn-xl">Login</a> 
             </div>
         </div>
         <video autoplay="autoplay" loop="loop" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="/public/images/dog.gif" id="video-background">

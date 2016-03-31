@@ -1,7 +1,6 @@
 package com.rcctv.services;
 
 import javax.mail.MessagingException;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
@@ -17,6 +16,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.support.TransactionSynchronizationAdapter;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rcctv.domain.ForgotPasswordForm;
 import com.rcctv.domain.ResetPasswordForm;
@@ -182,9 +182,26 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		Utilities.validate(loggedIn.isAdmin() || loggedIn.getId() == userId, "noPermissions");
 		User user = userRepository.findOne(userId);
 		user.setName(userEditForm.getName());
+		user.setEmail(userEditForm.getEmail());
+		user.setPassword(passwordEncoder.encode(userEditForm.getPassword()));
 		if (loggedIn.isAdmin())
 			user.setRoles(userEditForm.getRoles());
 		userRepository.save(user);
+		
+	}
+
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void delete(long userId) {
+		User loggedIn = Utilities.getSessionUser();
+		User user = userRepository.findOne(userId);
+		
+		if (loggedIn.getId() == user.getId() && loggedIn.isAdmin()) {
+			userRepository.delete(user);
+		}
+		else {
+			logger.info("deleteWarning");
+		}
 		
 	}
 	
