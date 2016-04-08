@@ -20,9 +20,17 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
    	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
    	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-   	<link type="text/css" rel="stylesheet" href="/public/css/style.css"/>
 	<link rel="shortcut icon" type="image/png" sizes="16x16" href="/public/images/favicon/logo.png"/>
+	<link type="text/css" rel="stylesheet" href="/public/css/style.css"/>
 	<link type="application/javascript" href="/public/js/home.js"/>
+	<link type="application/javascript" href="/public/js/webcam.js"/>
+	<link type="application/javascript" href="/public/js/face-recognition.js"/>
+	<link type="application/javascript" href="/public/js/vendor/tracking-min.js"/>
+	<link type="application/javascript" href="/public/js/vendor/gif.js"/>
+	<link type="application/javascript" href="/public/js/data/gif.worker.js"/>
+	<link type="application/javascript" href="/public/js/data/eye-min.js"/>
+	<link type="application/javascript" href="/public/js/data/face-min.js"/>
+	<link type="application/javascript" href="/public/js/data/mouth-min.js"/>
 	<link rel="manifest" href="/manifest.json"/>
 	
 	<title>Raspberry CCTV</title>

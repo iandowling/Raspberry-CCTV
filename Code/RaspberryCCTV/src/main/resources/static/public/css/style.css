@@ -333,7 +333,7 @@ footer {
     border-color: #fff;
     color: #000;
     font-color: #000;
-    background-color: #fff;
+    background-color: #eee;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -436,15 +436,32 @@ span[id$=errors] {
 }
 
 #user-main {
-	margin-top: 80px;
+	margin-top: 50px;
 	margin-left: 25%;
 	margin-right: 25%;
+	position: relative;
 	
 }
 
-.audio {
-	margin-left: 40px;
-	margin-right:auto;
+.video-container {
+	position: relative;
+	
+}
+
+#videoElement {
+	position: absolute;
+}
+
+#canvas {
+	position: relative;
+}
+
+#canvas2 {
+	position: relative;
+}
+
+.text-to-speech {
+	margin-right: 50px;
 }
 
 img {
@@ -481,3 +498,31 @@ img {
 	margin-left: 5%;
 	margin-right: 5%;
 }
+
+.rect:hover * {
+    opacity: 1;
+  }
+
+.rect {
+    border-radius: 2px;
+    border: 3px solid white;
+    box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    left: -1000px;
+    opacity: 0;
+    position: absolute;
+    top: -1000px;
+}
+
+ #save {
+ 	margin-top: 3px;
+ }
+ 
+ 
+ .media-container {
+ 	width: 70%;
+ 	height: auto;
+ 	margin-left: 10%;
+ 	margin-right: 10%;
+ }
+ 

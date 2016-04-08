@@ -2,8 +2,8 @@
 (function($) {
     "use strict";
 
-    $('body').scrollspy({
-        target: '.navbar-fixed-top',
+    /*$('body').scrollspy({
+        target: '.navbar-static-top',
         offset: 60
     });
 
@@ -11,7 +11,7 @@
         offset: {
             top: 200
         }
-    });
+    });*/
     
     $('#toggleVideo').click(function(){
     	   $('video-background').css('/public/images/dog.gif','/public/images/window.gif');
