@@ -3,7 +3,6 @@ package com.rcctv.services;
 import javax.mail.MessagingException;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,6 @@ import com.rcctv.mail.MailSender;
 import com.rcctv.repositories.UserRepository;
 import com.rcctv.util.Utilities;
 
-@Lazy
 @Service
 @Transactional(propagation=Propagation.SUPPORTS, readOnly=true)
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -41,8 +39,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	private PasswordEncoder passwordEncoder;
     private MailSender mailSender;
     
-    @Autowired
-    private SessionFactory sessionFactory;
+    // @Autowired
+    //private SessionFactory sessionFactory;
 
 	@Autowired
 	public UserServiceImpl(UserRepository userRepository,

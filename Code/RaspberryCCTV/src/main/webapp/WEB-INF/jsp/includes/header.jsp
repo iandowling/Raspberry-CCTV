@@ -63,7 +63,6 @@
 	         
 	          <sec:authorize access="isAuthenticated()">
 	          	  <li><a href="/raspberrycctv">Webcam Feed</a></li>
-	          	  <li><a href="/configuration"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
 	              <li class="dropdown">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                      <span class="glyphicon glyphicon-user"></span>

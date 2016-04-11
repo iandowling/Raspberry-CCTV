@@ -70,12 +70,6 @@ public class MainController {
 		return "user-main";
 	}
 	
-	
-	@RequestMapping(value = "/configuration", method = RequestMethod.GET)
-	public String userConfig(Model model) {
-		return "configuration";
-	}
-	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(Model model) {
 		

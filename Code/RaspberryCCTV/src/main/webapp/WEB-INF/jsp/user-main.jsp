@@ -15,11 +15,17 @@
 		 		<button class="btn btn-default" type="button" value="Photo" id="photo"><span class="fa fa-camera-retro"></span> Take Photo</button>
 		 		<button class="btn btn-default" type="button" value="Record" id="record"><span class="fa fa-video-camera" ></span> Recored Video</button>
 		 		<button class="btn btn-default" type="button" value="Stop" id="stop"><span class="fa fa-stop" ></span> Stop Recording</button>
-		 		<button class="btn btn-default" type="button" value="Save" id="save" data-toggle="modal" data-target="#saveMediaModal"><span class="fa fa-save"></span> Save</button>
+		 		<button class="btn btn-default" type="button" value="Save" id="save"><span class="fa fa-save"></span> Save</button>
 		   </div>
-		   <br />	   
+		   <br />
+		   <div class="btn-group2">
+		 	  	<button class="btn btn-default" type="button" value="facial" id="facial"><span class="fa fa-user"></span> Toggle Facial Recognition</button>		
+		 		<button class="btn btn-default" type="button" value="facial-features" id="facial-features"><span class="fa fa-eye" ></span> Toggle Facial Features</button>
+		 		<button class="btn btn-default" type="button" value="grayscale" id="grayscale"><span class="fa fa-delicious"></span> Toggle Grayscale</button>
+		 		<button class="btn btn-default" type="button" value="cloud-save" id="cloud-save" data-toggle="modal" data-target="#saveMediaModal"><span class="fa fa-cloud-upload"></span> Upload to Dropbox</button>
+		   </div>	   
 	   </div>
-   
+   	   <br/>
 	   <div class="text-to-speech">
 		<div class="col-lg-8">
 	   		<div class="input-group">
