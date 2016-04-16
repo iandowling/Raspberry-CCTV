@@ -5,7 +5,7 @@ $( document ).ready(function() {
 	var video   = document.getElementById('videoElement');
 	var canvas  = document.getElementById('canvas');
 	var context = canvas.getContext('2d');
-	var tracker = new tracking.ObjectTracker(['face', 'eye', 'mouth']);
+	var tracker = new tracking.ObjectTracker('face');
 	
 	tracker.setInitialScale(4);
 	tracker.setStepSize(2);
@@ -24,7 +24,6 @@ $( document ).ready(function() {
 	});
 	
 	var trackingThread = tracking.track(video, tracker, {camera: true});
-	tracking.Image.grayscale(pixels, w, h, fillRGBA);
 	
 });
 	

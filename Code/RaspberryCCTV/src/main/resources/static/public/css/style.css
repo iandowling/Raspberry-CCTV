@@ -460,6 +460,10 @@ span[id$=errors] {
 	position: relative;
 }
 
+#recorded {
+	position: relative;
+}
+
 .text-to-speech {
 	margin-right: 50px;
 }
@@ -529,4 +533,27 @@ img {
  #cloud-save {
 	margin-top: 5px;	
 }
- 
+
+.grayscale {
+	-webkit-filter: grayscale(1);
+    -moz-filter: 	grayscale(1);
+    -o-filter:		grayscale(1);
+    -ms-filter:		grayscale(1);
+    filter:			grayscale(1);
+}
+
+.sepia {
+	-webkit-filter: sepia(0.8);
+    -moz-filter: 	sepia(0.8);
+    -o-filter:		sepia(0.8);
+    -ms-filter:		sepia(0.8);
+    filter:			sepia(0.8);
+}
+
+.invert {
+	-webkit-filter: invert(1);
+    -moz-filter: 	invert(1);
+    -o-filter:		invert(1);
+    -ms-filter:		invert(1);
+    filter:			invert(1);
+}

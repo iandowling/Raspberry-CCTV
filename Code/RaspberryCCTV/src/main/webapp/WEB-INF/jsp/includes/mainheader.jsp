@@ -15,6 +15,7 @@
 	<link href="/public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 	<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
@@ -24,13 +25,10 @@
 	<link type="text/css" rel="stylesheet" href="/public/css/style.css"/>
 	<link type="application/javascript" href="/public/js/home.js"/>
 	<link type="application/javascript" href="/public/js/webcam.js"/>
+	<link type="application/javascript" href="/public/js/recordVideo.js"/>
 	<link type="application/javascript" href="/public/js/face-recognition.js"/>
 	<link type="application/javascript" href="/public/js/vendor/tracking-min.js"/>
-	<link type="application/javascript" href="/public/js/vendor/gif.js"/>
-	<link type="application/javascript" href="/public/js/data/gif.worker.js"/>
-	<link type="application/javascript" href="/public/js/data/eye-min.js"/>
 	<link type="application/javascript" href="/public/js/data/face-min.js"/>
-	<link type="application/javascript" href="/public/js/data/mouth-min.js"/>
 	<link rel="manifest" href="/manifest.json"/>
 	
 	<title>Raspberry CCTV</title>
