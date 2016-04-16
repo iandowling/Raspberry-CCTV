@@ -27,31 +27,3 @@ $( document ).ready(function() {
 	
 });
 	
-	/*function loadSettings() {
-		var checkboxes = document.querySelectorAll('input[type=checkbox]');
-		
-		for (i = 0; i < checkboxes.length; i++) {
-			checkboxes[i].checked = localStorage.getItem(checkboxes[i].value) === 'true' ? true : false;
-		}
-	}
-	var saveSettings = document.getElementById('save');
-	save.addEventListener('click', function saveSettings() {
-		var checkboxes = document.querySelectorAll('input[type=checkbox]');
-		
-		for (i = 0; i < checkboxes.length; i++) {
-	        localStorage.setItem(checkboxes[i].value, checkboxes[i].checked); 
-	    }
-	});
-	
-	var facialCheck = document.getElementById("facial-recognition");
-	facialCheck.onclick = function() {
-		if (this.checked) {
-			trackingThread.run();
-		}
-		else {
-			trackingThread.stop();
-		}
-	}*/
-
-	
-	
