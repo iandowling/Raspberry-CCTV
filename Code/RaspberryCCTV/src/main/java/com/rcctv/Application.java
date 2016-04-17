@@ -23,7 +23,6 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 @EnableAutoConfiguration
 @EnableTransactionManagement
 @EnableAsync
-@SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {

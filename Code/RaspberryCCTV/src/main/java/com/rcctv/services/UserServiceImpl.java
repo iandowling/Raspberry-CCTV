@@ -38,11 +38,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	private PasswordEncoder passwordEncoder;
     private MailSender mailSender;
     
-    @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-    	this.passwordEncoder = passwordEncoder;
-    }
-   
 	@Autowired
 	public UserServiceImpl(UserRepository userRepository,
 			PasswordEncoder passwordEncoder,
