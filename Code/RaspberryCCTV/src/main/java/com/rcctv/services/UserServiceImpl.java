@@ -48,6 +48,21 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		this.passwordEncoder = passwordEncoder;
 		
 	}
+	
+	@Autowired
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	
+	@Autowired
+	public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+		this.passwordEncoder = passwordEncoder;
+	}
+	
+	@Autowired
+	public void setMailSender(MailSender mailSender) {
+		this.mailSender = mailSender;
+	}
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=false)
