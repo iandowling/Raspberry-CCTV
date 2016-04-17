@@ -99,4 +99,28 @@
 		$('#saveMediaModal').modal('show');
 	});
 	
+	var audioOnButton = document.getElementById('audio-on');
+	audioOnButton.addEventListener('click', function (e) {
+		audioOn();
+	});
+	
+	var audioOffButton = document.getElementById('audio-off');
+	audioOffButton.addEventListener('click', function (e) {
+		audioOff();
+	});
+	
+	function audioOn() {
+		if (navigator.getUserMedia) {       
+		    // get webcam feed and audio
+		    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
+		}
+	}
+	
+	var audioOff = function audioOff() {
+		if (navigator.getUserMedia) {       
+		    // get webcam feed only
+		    navigator.getUserMedia({video: true}, handleVideo, videoError);
+		}
+	}
+	
 	

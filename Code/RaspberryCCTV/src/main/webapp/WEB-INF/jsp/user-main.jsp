@@ -10,7 +10,7 @@
   		<canvas id="canvas" width="500" height="375"></canvas>
   		<canvas id="canvas2" width="500" height="375"></canvas>
   		<video id="recorded" width="500" height="375" autoplay="autoplay" controls="controls"></video>
-	
+		
 		<div class="camera-controls">
 		 	<div class="btn-group2">
 		 	  	<button class="btn btn-default" type="button"  id="clear"><span class="fa fa-remove"></span> Clear</button>		
@@ -21,11 +21,13 @@
 		 	<div class="btn btn-group2">
 		 		<button class="btn btn-default" type="button"  id="saveImg"><span class="fa fa-save"></span> Save Image</button>
 		 		<button class="btn btn-default" type="button"  id="saveVideo"><span class="fa fa-save"></span> Download Video</button>
+		 		<button class="btn btn-default" type="button"  id="cloud-save" data-toggle="modal" data-target="#saveMediaModal"><span class="fa fa-dropbox"></span> Upload to Dropbox</button>
 		   </div>
 		   <div class="btn-group2">
-		 		<button class="btn btn-default" type="button" value="facial-off" id="facial-off"><span class="fa fa-eye" ></span> Motion Detection On</button>
-		 		<button class="btn btn-default" type="button" value="grayscale" id="grayscale"><span class="fa fa-delicious"></span> Toggle Filters</button>
-		 		<button class="btn btn-default" type="button" value="cloud-save" id="cloud-save" data-toggle="modal" data-target="#saveMediaModal"><span class="fa fa-cloud-upload"></span> Upload to Dropbox</button>
+		 		<button class="btn btn-default" type="button" id="audio-on"><span class="fa fa-microphone" ></span> Audio On</button>
+		 		<button class="btn btn-default" type="button" id="audio-off"><span class="fa fa-microphone-slash" ></span> Audio Off</button>
+		 		<button class="btn btn-default" type="button" id="grayscale"><span class="fa fa-delicious"></span> Toggle Filters</button>
+		 		
 		   </div>	   
 	   </div>
    	   <br/>
