@@ -25,6 +25,14 @@
 		<start-class>com.rcctv.Application</start-class>
 	</properties>
 	
+	<repositories>
+		<repository>
+	       <id>repository.springsource.milestone</id>
+	       <name>SpringSource Milestone Repository</name>
+	       <url>http://repo.springsource.org/milestone</url>
+	     </repository>
+	</repositories>
+	
 	<dependencies>
 		<dependency>
   			<groupId>org.springframework.boot</groupId>
@@ -107,6 +115,15 @@
 	        <optional>true</optional>
 	    </dependency>
 	    
+	    <!-- Cloud foundry -->
+	    <dependency>
+      		<groupId>org.springframework.cloud</groupId>
+      		<artifactId>spring-cloud-spring-service-connector</artifactId>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.springframework.cloud</groupId>
+    		<artifactId>spring-cloud-cloudfoundry-connector</artifactId>
+  		</dependency>
 	    <!-- Dropbox api -->
 	    <!-- <dependency>
     		<groupId>com.dropbox.core</groupId>
@@ -114,6 +131,8 @@
     		<version>2.0.1</version>
 		</dependency> --> 
 	</dependencies>
+	
+	
 	
 	<!-- <build>
 		<plugins>

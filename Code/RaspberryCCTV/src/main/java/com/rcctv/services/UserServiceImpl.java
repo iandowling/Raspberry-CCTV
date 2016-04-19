@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	private PasswordEncoder passwordEncoder;
     private MailSender mailSender;
     
-	@Autowired
+	/*@Autowired
 	public UserServiceImpl(UserRepository userRepository,
 			PasswordEncoder passwordEncoder,
 			MailSender mailSender) {
@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		this.userRepository = userRepository;
 		this.passwordEncoder = passwordEncoder;
 		
-	}
+	}*/
 	
 	@Autowired
 	public void setUserRepository(UserRepository userRepository) {
