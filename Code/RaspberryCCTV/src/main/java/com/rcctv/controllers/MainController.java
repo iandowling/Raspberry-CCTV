@@ -60,12 +60,12 @@ public class MainController {
 		binder.setValidator(resetPasswordFormValidator);
 	}
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/RaspberryCCTV", method = RequestMethod.GET)
 	public String index() {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/raspberrycctv", method = RequestMethod.GET)
+	@RequestMapping(value = "/webcam", method = RequestMethod.GET)
 	public String userMain(Model model) {
 		return "user-main";
 	}

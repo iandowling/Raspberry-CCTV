@@ -12,21 +12,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   	<meta name="description" content="An application with enables a user to view a live webcam feed."/>
   	<meta name="author" content="Ian Dowling"/>
-	<link href="/public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  	<script src="/public/lib/bootstrap-3.1.1/js/bootstrap.min.js"></script>
-  	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+  	<script src="../public/lib/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+  	<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-   	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
-   	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="/public/images/favicon/logo.png"/>
-	<link type="text/css" rel="stylesheet" href="/public/css/style.css"/>
-	<link type="application/javascript" href="/public/js/home.js"/>
-	<link type="application/javascript" href="/public/js/webcam.js"/>
-	<link type="application/javascript" href="/public/js/recordVideo.js"/>
-	<link type="application/javascript" href="/public/js/face-recognition.js"/>
-	<link type="application/javascript" href="/public/js/vendor/tracking-min.js"/>
-	<link type="application/javascript" href="/public/js/data/face-min.js"/>
+   	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+   	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="../public/images/favicon/logo.png"/>
+	<link type="text/css" rel="stylesheet" href="../public/css/style.css"/>
+	<link type="application/javascript" href="../public/js/home.js"/>
+	<link type="application/javascript" href="../public/js/webcam.js"/>
+	<link type="application/javascript" href="../public/js/recordVideo.js"/>
+	<link type="application/javascript" href="../public/js/face-recognition.js"/>
+	<link type="application/javascript" href="../public/js/vendor/tracking-min.js"/>
+	<link type="application/javascript" href="../public/js/data/face-min.js"/>
 	<link rel="manifest" href="/manifest.json"/>
 	
 	<title>Raspberry CCTV</title>
@@ -40,7 +40,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
 		            <i class="fa fa-bars"></i>
           		</button>
-	      		<a class="navbar-brand" href="/"><i class="fa fa-eye"></i> Raspberry CCTV</a>
+	      		<a class="navbar-brand" href="/RaspberryCCTV"><i class="fa fa-eye"></i> Raspberry CCTV</a>
 	   		</div>
 	
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,7 +66,7 @@
 	         </sec:authorize>
 	         
 	          <sec:authorize access="isAuthenticated()">
-	          	  <li><a href="/raspberrycctv">Webcam Feed</a></li>
+	          	  <li><a href="/webcam">Webcam Feed</a></li>
 	              <li class="dropdown">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                      <span class="glyphicon glyphicon-user"></span>
