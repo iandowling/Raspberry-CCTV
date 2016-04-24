@@ -67,7 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/raspberrycctv")
+                .defaultSuccessUrl("/webcam")
                 .permitAll().and()
             .rememberMe().key(rememberMeKey).rememberMeServices(rememberMeServices()).and()
             .logout()

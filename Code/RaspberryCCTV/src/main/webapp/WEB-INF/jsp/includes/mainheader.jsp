@@ -12,21 +12,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   	<meta name="description" content="An application with enables a user to view a live webcam feed."/>
   	<meta name="author" content="Ian Dowling"/>
-	<link href="./static/public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  	<script src="./static/public/lib/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+  	<script src="./public/lib/bootstrap-3.1.1/js/bootstrap.min.js"></script>
   	<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
    	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
    	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="./static/public/images/favicon/logo.png"/>
-	<link type="text/css" rel="stylesheet" href="./static/public/css/style.css"/>
-	<link type="application/javascript" href="./static/public/js/home.js"/>
-	<link type="application/javascript" href="./static/public/js/webcam.js"/>
-	<link type="application/javascript" href="./static/public/js/recordVideo.js"/>
-	<link type="application/javascript" href="./static/public/js/face-recognition.js"/>
-	<link type="application/javascript" href="./static/public/js/vendor/tracking-min.js"/>
-	<link type="application/javascript" href="./static/public/js/data/face-min.js"/>
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="./public/images/favicon/logo.png"/>
+	<link type="text/css" rel="stylesheet" href="./public/css/style.css"/>
+	<link type="application/javascript" href="./public/js/home.js"/>
+	<link type="application/javascript" href="./public/js/webcam.js"/>
+	<link type="application/javascript" href="./public/js/recordVideo.js"/>
+	<link type="application/javascript" href="./public/js/face-recognition.js"/>
+	<link type="application/javascript" href="./public/js/vendor/tracking-min.js"/>
+	<link type="application/javascript" href="./public/js/data/face-min.js"/>
 	<link rel="manifest" href="/manifest.json"/>
 	
 	<title>Raspberry CCTV</title>

@@ -9,8 +9,9 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("home");
+        registry.addViewController("/RaspberryCCTV").setViewName("home");
         registry.addViewController("/login").setViewName("login");
+      
     }
 
 }
