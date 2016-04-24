@@ -12,17 +12,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   	<meta name="description" content="An application with enables a user to view a live webcam feed."/>
   	<meta name="author" content="Ian Dowling"/>
-	<link href="../public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./static/public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
    	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
    	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-   	<link type="text/css" rel="stylesheet" href="../public/css/style.css"/>
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="../public/images/favicon/logo.png"/>
-	<link type="application/javascript" href="../public/js/home.js"/>
+   	<link type="text/css" rel="stylesheet" href="./static/public/css/style.css"/>
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="./static/public/images/favicon/logo.png"/>
+	<link type="application/javascript" href="./static/public/js/home.js"/>
 	<link rel="manifest" href="/manifest.json"/>
 	
 	<title>Raspberry CCTV</title>
@@ -55,9 +55,9 @@
 		      <ul class="nav navbar-nav navbar-right">
 		      <sec:authorize access="isAnonymous()">
 		      
-		        <li><a href="<c:url value='/signup' />"><span class="glyphicon glyphicon-list-alt"></span> Sign up</a></li>
+		        <li><a href="<c:url value='signup' />"><span class="glyphicon glyphicon-list-alt"></span> Sign up</a></li>
 		        <li>
-	                  <a href="/login">Sign in <span class="glyphicon glyphicon-log-in"></span></a>
+	                  <a href="login">Sign in <span class="glyphicon glyphicon-log-in"></span></a>
 	            </li>
 	         </sec:authorize>
 	         
