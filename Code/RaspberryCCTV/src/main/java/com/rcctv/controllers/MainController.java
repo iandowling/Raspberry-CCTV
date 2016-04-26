@@ -65,12 +65,12 @@ public class MainController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/webcam", method = RequestMethod.GET)
+	@RequestMapping(value = "/RaspberryCCTV/webcam", method = RequestMethod.GET)
 	public String userMain(Model model) {
 		return "user-main";
 	}
 	
-	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	@RequestMapping(value = "/RaspberryCCTV/signup", method = RequestMethod.GET)
 	public String signup(Model model) {
 		
 		model.addAttribute(new SignupForm());
@@ -78,7 +78,7 @@ public class MainController {
 		
 	}
 	
-	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	@RequestMapping(value = "/RaspberryCCTV/signup", method = RequestMethod.POST)
 	public String signup(@ModelAttribute("signupForm") @Valid SignupForm signupForm,
 			BindingResult result, RedirectAttributes redirectAttributes) {
 		
@@ -89,11 +89,11 @@ public class MainController {
 		
 		Utilities.flash(redirectAttributes, "success", "signupSuccess");
 		
-		return "redirect:/login";
+		return "redirect:/RaspberryCCTV/login";
 
 	}
 	
-	@RequestMapping(value = "/forgot-password", method = RequestMethod.GET)
+	@RequestMapping(value = "/RaspberryCCTV/forgot-password", method = RequestMethod.GET)
 	public String forgotPassword(Model model) {
 		
 		model.addAttribute(new ForgotPasswordForm());
@@ -103,7 +103,7 @@ public class MainController {
 	/**
 	 * Forgot password
 	 */
-	@RequestMapping(value = "/forgot-password", method = RequestMethod.POST)
+	@RequestMapping(value = "/RaspberryCCTV/forgot-password", method = RequestMethod.POST)
 	public String forgotPassword(
 			@ModelAttribute("forgotPasswordForm") @Valid ForgotPasswordForm forgotPasswordForm,
 			BindingResult result, RedirectAttributes redirectAttributes) {
@@ -114,20 +114,20 @@ public class MainController {
 		userService.forgotPassword(forgotPasswordForm);
 		Utilities.flash(redirectAttributes, "info", "checkMailResetPassword");
 
-		return "redirect:/login";
+		return "redirect:/RaspberryCCTV/login";
 	}
 	
     /**
      * Reset password
      */
-    @RequestMapping(value = "/reset-password/{forgotPasswordCode}")
+    @RequestMapping(value = "/RaspberryCCTV/reset-password/{forgotPasswordCode}")
     public String resetPassword(@PathVariable("forgotPasswordCode") String forgotPasswordCode, Model model) {
     	
      	model.addAttribute(new ResetPasswordForm());
     	return "reset-password";
     }
     
-	@RequestMapping(value = "/reset-password/{forgotPasswordCode}",
+	@RequestMapping(value = "/RaspberryCCTV/reset-password/{forgotPasswordCode}",
 			method = RequestMethod.POST)
 	public String resetPassword(
 			@PathVariable("forgotPasswordCode") String forgotPasswordCode,
@@ -143,7 +143,7 @@ public class MainController {
 
 		Utilities.flash(redirectAttributes, "success", "passwordChanged");
 
-		return "redirect:/login";
+		return "redirect:/RaspberryCCTV/login";
 	}
 
 }
