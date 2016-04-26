@@ -60,7 +60,7 @@ public class MainController {
 		binder.setValidator(resetPasswordFormValidator);
 	}
 	
-	@RequestMapping(value = "/RaspberryCCTV", method = RequestMethod.GET)
+	@RequestMapping(value = "/RaspberryCCTV/index", method = RequestMethod.GET)
 	public String index() {
 		return "home";
 	}

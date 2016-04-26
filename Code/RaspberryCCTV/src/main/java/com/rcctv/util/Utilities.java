@@ -43,7 +43,7 @@ public class Utilities {
     }
     
     public static String hostUrl() {
-		return (isDev() ? "http://localhost:8080" : "https://localhost:8443");
+		return (isDev() ? "http://192.168.2.37:8080" : "https://192.168.2.37:8443");
 	}
 	
 	private static MessageSource messageSource;

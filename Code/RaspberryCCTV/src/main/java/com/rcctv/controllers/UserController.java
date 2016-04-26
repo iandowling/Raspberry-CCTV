@@ -43,7 +43,7 @@ public class UserController {
 
 	}
 	
-    @RequestMapping(value = "/{userId}")
+    @RequestMapping(value = "/RaspberryCCTV/{userId}")
     public String getById(@PathVariable("userId") long userId, Model model) {
     	model.addAttribute(userService.findOne(userId));
 	  	return "user";
@@ -51,7 +51,7 @@ public class UserController {
     
      
     
-    @RequestMapping(value = "/{userId}/edit")
+    @RequestMapping(value = "/RaspberryCCTV/{userId}/edit")
     public String edit(@PathVariable("userId") long userId, Model model) {
     	
 		User user = userService.findOne(userId);

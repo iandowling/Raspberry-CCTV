@@ -44,6 +44,7 @@
         		</exclusion>
     		</exclusions>
 		</dependency>
+		<!-- Dependency for JUnit tests -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

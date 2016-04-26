@@ -1,4 +1,4 @@
-package com.rcctv.tests;
+package com.rcctv.junittests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

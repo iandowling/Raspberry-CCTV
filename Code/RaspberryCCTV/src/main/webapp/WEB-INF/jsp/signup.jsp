@@ -27,7 +27,7 @@
 				<form:password path="password" class="form-control" placeholder="Password" />
 				<form:errors cssClass="error" path="password" />
 			</div>
-			<button type="submit" class="btn btn-default">Register</button>
+			<button type="submit" class="btn btn-default" id="register">Register</button>
 		</form:form>
 	</div>
   </div>

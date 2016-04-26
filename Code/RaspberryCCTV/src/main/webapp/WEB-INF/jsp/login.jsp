@@ -20,7 +20,7 @@
 	
 		<form:form role="form" method="post">
 			<div class="form-group">
-				<label for="username">Email address</label>
+				<label for="email">Email address</label>
 				<input id="username" name="username" type="email" class="form-control" placeholder="Enter email" />
 				<p class="help-block">Enter your email address.</p>
 			</div>
@@ -32,13 +32,13 @@
 			<div class="form-group">
                 <div class="checkbox">
                     <label>
-                        <input name="remember-me" type="checkbox"> Remember me
+                        <input name="remember-me" type="checkbox" id="remember-me"> Remember me
                     </label>
                 </div>
             </div>
 			
-			<button type="submit" class="btn btn-default">Sign In</button>
-			<a class="btn btn-default" href="/forgot-password">Forgot Password</a>
+			<button type="submit" class="btn btn-default" id="submit">Sign In</button>
+			<a class="btn btn-default" id="forgot-password" href="/forgot-password">Forgot Password</a>
 		</form:form>
 	</div>
   </div>
