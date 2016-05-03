@@ -32,17 +32,6 @@
 			</div>
 			
 		   </div>
-
-			<sec:authorize access="hasRole('ROLE_ADMIN')">
-	            <div class="form-group">
-					<form:label path="roles" class="col-lg-2 control-label">Roles</form:label>
-					<div class="col-lg-10">
-						<form:input path="roles" class="form-control" placeholder="Roles" />
-						<form:errors cssClass="error" path="roles" />
-						<p class="help-block">Enter the roles of the user, separated by commas</p>
-					</div>
-				</div>
-			</sec:authorize>
             
            <div class="form-group">
                <div class="col-lg-offset-2 col-lg-10">

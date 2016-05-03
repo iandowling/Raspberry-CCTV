@@ -18,8 +18,8 @@
 	<c:if test="${user.editable}">
 	    <div class="panel-footer">
 	
-	        <a class="btn btn-link" href="/users/${user.id}/edit">Edit</a>
-	        <a class="btn btn-link" href="/users/${user.id}/delete">Delete user</a>
+	        <a class="btn btn-link" href="/RaspberryCCTV/users/${user.id}/edit">Edit</a>
+	        <a class="btn btn-link" href="/RaspberryCCTV/users/${user.id}/delete">Delete user</a>
 	
 	    </div>
 	</c:if>

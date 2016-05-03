@@ -3,29 +3,11 @@
 	var video = document.querySelector("#videoElement");
 	var oFilter = 0;
 	var filters = ['grayscale', 'sepia', 'invert', 'none'];
-	
-	// check for getUserMedia support
-	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
-	 
-	if (navigator.getUserMedia) {       
-	    // get webcam feed if available
-	    navigator.getUserMedia({video: true}, handleVideo, videoError);
-	}
-	 
-	function handleVideo(stream) {
-	    // if found attach feed to video element
-	    video.src = window.URL.createObjectURL(stream);
-	}
-	 
-	function videoError(e) {
-	    console.log(e);
-	}
-	
 	var v,canvas,context,w,h;
+		
 	document.addEventListener('DOMContentLoaded', function(){
 	    // when DOM loaded, get canvas 2D context and store width and height of element
-		
-	    v = document.getElementById('videoElement');
+		v = document.getElementById('videoElement');
 	    canvas = document.getElementById('canvas2');
 	    context = canvas.getContext('2d');
 	    w = canvas.width;
@@ -34,7 +16,7 @@
 	    $("#recorded").hide();
 	    $("#canvas2").hide();
 	    $("#saveMediaModal").hide();
-	
+	    
 	},false);
 	
 	function draw(v,context,w,h) {
@@ -101,26 +83,11 @@
 	
 	var audioOnButton = document.getElementById('audio-on');
 	audioOnButton.addEventListener('click', function (e) {
-		audioOn();
+		console.log("Audio on button pressed.");
 	});
 	
 	var audioOffButton = document.getElementById('audio-off');
 	audioOffButton.addEventListener('click', function (e) {
-		audioOff();
+		console.log("Audio off button pressed.");
 	});
-	
-	function audioOn() {
-		if (navigator.getUserMedia) {       
-		    // get webcam feed and audio
-		    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
-		}
-	}
-	
-	var audioOff = function audioOff() {
-		if (navigator.getUserMedia) {       
-		    // get webcam feed only
-		    navigator.getUserMedia({video: true}, handleVideo, videoError);
-		}
-	}
-	
 	

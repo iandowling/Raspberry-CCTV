@@ -10,8 +10,8 @@
                 <a href="signup" class="btn btn-primary btn-xl page-scroll">Get Started</a> &nbsp;<a href="login" id="login" class="btn btn-primary btn-xl">Login</a> 
             </div>
         </div>
-        <video autoplay="autoplay" loop="loop" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="./static/public/images/dog.gif" id="video-background">
-            <source src="./static/public/images/dog.gif" type="video/mp4" ></source>
+        <video autoplay="autoplay" loop="loop" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="./public/images/dog.gif" id="video-background">
+            <source src="./public/images/dog.gif" type="video/mp4" ></source>
         </video>
     </header>
     
@@ -37,7 +37,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Download Raspberry CCTV on Android today <span class="fa fa-android" id="android"></span></h2>
                     <p>You can download Raspberry CCTV for free from the Google Play Store.</p>
-                    <p><img src="./static/public/images/googlePlay.jpg" id="playImg"></img></p>
+                    <p><img src="./public/images/googlePlay.jpg" id="playImg"></img></p>
                     <a href="http://www.play.google.com/store/apps" class="btn btn-default btn-lg">Visit Google Play</a>
                 </div>
             </div>

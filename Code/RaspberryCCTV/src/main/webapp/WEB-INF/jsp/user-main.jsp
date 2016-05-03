@@ -2,11 +2,9 @@
 
 <div id="user-main">
 	<h4>RaspberryCCTV Camera Feed</h4>
-	
-	<!-- For devices that support getUserMedia and have a webcam we can display the feed in a video element -->
+		
 	<div id="video-container">
-	
-  		<video id="videoElement" width="500" height="375" autoplay="autoplay" controls="controls" ></video>
+  		<video src="document.getElementById('ip-address').value" id="videoElement" width="500" height="375" autoplay="autoplay" controls="controls" ></video>
   		<canvas id="canvas" width="500" height="375"></canvas>
   		<canvas id="canvas2" width="500" height="375"></canvas>
   		<video id="recorded" width="500" height="375" autoplay="autoplay" controls="controls"></video>
@@ -27,53 +25,52 @@
 		 		<button class="btn btn-default" type="button" id="audio-on"><span class="fa fa-microphone" ></span> Audio On</button>
 		 		<button class="btn btn-default" type="button" id="audio-off"><span class="fa fa-microphone-slash" ></span> Audio Off</button>
 		 		<button class="btn btn-default" type="button" id="grayscale"><span class="fa fa-delicious"></span> Toggle Filters</button>
-		 		
 		   </div>	   
 	   </div>
-   	   <br/>
-	   <div class="text-to-speech">
-		<div class="col-lg-8">
-	   		<div class="input-group">
-		      <input type="text" name="text" class="form-control" id="speech" placeholder="Warn intruder..."/>
-		      <span class="input-group-btn">
-		        <button class="btn btn-default" type="button" onclick="responsiveVoice.speak($('#speech').val());"><span class="fa fa-send"></span></button>
-		      </span>
-	  		</div><!-- /input-group -->
-		</div><!-- /.col-lg-6 -->
-	  </div>
-	  <br /> 
-	</div>
-	
-	<!-- Modal -->
-	<div id="saveMediaModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-	
-	    <!-- Modal content-->
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title"><span class="fa fa-dropbox"></span>Login to dropbox account</h4>
-	      </div>
-	      <div class="modal-body">
-	        <form:form role="form" method="post">
-				<div class="form-group">
-					<label for="file-name">Username</label>
-					<input type="text" id="username" name="username" class="form-control" placeholder="Username" />
-				</div>
-				<div class="form-group">
-					<label for="description">Password</label>
-					<input type="password" id="password" name="password" class="form-control" placeholder="Password" />
-				</div>
-			</form:form>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn btn-default pull-right">Login</button>
-	      </div>
-	    </div>
-	
-	  </div>
-	</div>
+   </div>
+  	   <br/>
+   <div class="text-to-speech">
+	<div class="col-lg-8">
+   		<div class="input-group">
+	      <input type="text" name="text" class="form-control" id="speech" placeholder="Warn intruder..."/>
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" onclick="responsiveVoice.speak($('#speech').val());"><span class="fa fa-send"></span></button>
+	      </span>
+  		</div><!-- /input-group -->
+	</div><!-- /.col-lg-6 -->
+  </div>
+  <br /> 
+</div>
+
+<!-- Modal -->
+<div id="saveMediaModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><span class="fa fa-dropbox"></span>Login to dropbox account</h4>
+      </div>
+      <div class="modal-body">
+        <form:form role="form" method="post">
+			<div class="form-group">
+				<label for="file-name">Username</label>
+				<input type="text" id="username" name="username" class="form-control" placeholder="Username" />
+			</div>
+			<div class="form-group">
+				<label for="description">Password</label>
+				<input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+			</div>
+		</form:form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-default pull-right">Login</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 		
 <%@include file="includes/mainfooter.jsp"%>

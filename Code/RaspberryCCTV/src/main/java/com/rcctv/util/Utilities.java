@@ -43,7 +43,7 @@ public class Utilities {
     }
     
     public static String hostUrl() {
-		return (isDev() ? "http://192.168.2.37:8080" : "https://192.168.2.37:8443");
+		return (isDev() ? "http://192.168.2.37:8080/RaspberyCCTV" : "https://192.168.2.37:8443/RaspberryCCTV");
 	}
 	
 	private static MessageSource messageSource;

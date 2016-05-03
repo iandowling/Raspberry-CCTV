@@ -20,7 +20,7 @@ import com.rcctv.services.UserService;
 import com.rcctv.util.Utilities;
 
 @Controller
-@RequestMapping("/RaspberryCCTV/users")
+@RequestMapping("/users")
 public class UserController {
 	
 	private UserService userService;
@@ -30,7 +30,7 @@ public class UserController {
 		this.userService = userService;
 	}
 	
-	@RequestMapping("/RaspberryCCTV/{verificationCode}/verify")
+	@RequestMapping("/{verificationCode}/verify")
 	public String verify(@PathVariable("verificationCode") String verificationCode,
 			RedirectAttributes redirectAttributes,
 			HttpServletRequest request) throws ServletException {
@@ -39,11 +39,11 @@ public class UserController {
 		Utilities.flash(redirectAttributes, "success", "verificationSuccess");
 		request.logout();
 		
-		return "redirect:/RaspberryCCTV/login";
+		return "redirect:/login";
 
 	}
 	
-    @RequestMapping(value = "/RaspberryCCTV/{userId}")
+    @RequestMapping(value = "/{userId}")
     public String getById(@PathVariable("userId") long userId, Model model) {
     	model.addAttribute(userService.findOne(userId));
 	  	return "user";
@@ -51,7 +51,7 @@ public class UserController {
     
      
     
-    @RequestMapping(value = "/RaspberryCCTV/{userId}/edit")
+    @RequestMapping(value = "/{userId}/edit")
     public String edit(@PathVariable("userId") long userId, Model model) {
     	
 		User user = userService.findOne(userId);

@@ -43,13 +43,13 @@
 		    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 		      <ul class="nav navbar-nav">
 		        <li>
-		        	<a class="page-scroll" href="#about">About</a>
+		        	<a class="page-scroll" href="/RaspberryCCTV/#about">About</a>
 		        </li>
 		        <li>
-		        	<a class="page-scroll" href="#download">Download</a>
+		        	<a class="page-scroll" href="/RaspberryCCTV/#download">Download</a>
 		        </li>
 		        <li>
-		        	<a class="page-scroll" href="#contact">Contact</a>
+		        	<a class="page-scroll" href="/RaspberryCCTV/#contact">Contact</a>
 		        </li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
@@ -62,14 +62,14 @@
 	         </sec:authorize>
 	         
 	          <sec:authorize access="isAuthenticated()">
-	          	  <li><a href="/webcam">Webcam Feed</a></li>
+	          	  <li><a href="/RaspberryCCTV/webcam">Webcam Feed</a></li>
 	              <li class="dropdown">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                      <span class="glyphicon glyphicon-user"></span>
 	                      <sec:authentication property="principal.user.name" /> <b class="caret"></b>
 	                  </a>
 	                  <ul class="dropdown-menu">
-	                     <li><a href="/users/<sec:authentication property='principal.user.id' />"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+	                     <li><a href="/RaspberryCCTV/users/<sec:authentication property='principal.user.id' />"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
 	                     <li>
 		                    <c:url var="logoutUrl" value="/logout" />
 			               	<form:form	id="logoutForm" action="${logoutUrl}" method="post">
@@ -87,7 +87,7 @@
 	<sec:authorize access="hasRole('ROLE_UNVERIFIED')">
 		<div class="alert alert-warning alert-dismissable">
 		  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		  Your email address has not been registered. <a href="/users/resend-verification-mail">Click here</a> to get the verification mail again.
+		  Your email address has not been registered. <a href="/RaspberryCCTV/users/resend-verification-mail">Click here</a> to get the verification mail again.
 		</div>
     </sec:authorize>
 

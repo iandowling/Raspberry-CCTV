@@ -3,7 +3,7 @@
 <div class="signup">
   <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Please signup</h3>
+		<h3 class="panel-title">Please Register</h3>
 	</div>
 	<div class="panel-body">
 		<form:form modelAttribute="signupForm" role="form">

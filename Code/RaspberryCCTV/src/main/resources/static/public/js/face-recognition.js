@@ -23,7 +23,7 @@ $( document ).ready(function() {
 		});
 	});
 	
-	var trackingThread = tracking.track(video, tracker, {camera: true});
+	var trackingThread = tracking.track(video, tracker, {camera: false});
 	
 });
 	
