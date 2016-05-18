@@ -500,12 +500,6 @@ img {
 	padding-bottom: 20px;
 }
 
-.configuration {
-	margin-top: 100px;
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
 .rect:hover * {
     opacity: 1;
   }
@@ -525,6 +519,9 @@ img {
  	margin-top: 3px;
  }
  
+ .feed {
+	padding-bottom: 20px; 
+ }
  
  .media-container {
  	width: 70%;

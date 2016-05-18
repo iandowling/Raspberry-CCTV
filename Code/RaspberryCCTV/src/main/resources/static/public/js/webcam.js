@@ -81,13 +81,4 @@
 		$('#saveMediaModal').modal('show');
 	});
 	
-	var audioOnButton = document.getElementById('audio-on');
-	audioOnButton.addEventListener('click', function (e) {
-		console.log("Audio on button pressed.");
-	});
-	
-	var audioOffButton = document.getElementById('audio-off');
-	audioOffButton.addEventListener('click', function (e) {
-		console.log("Audio off button pressed.");
-	});
 	

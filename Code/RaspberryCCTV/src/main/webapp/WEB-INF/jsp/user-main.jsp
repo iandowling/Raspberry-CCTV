@@ -4,7 +4,9 @@
 	<h4>RaspberryCCTV Camera Feed</h4>
 		
 	<div id="video-container">
-  		<video src="document.getElementById('ip-address').value" id="videoElement" width="500" height="375" autoplay="autoplay" controls="controls" ></video>
+	 	<div class="feed">
+  			<img src="https://192.168.2.84:8100/video_feed" id="videoElement" width="500" height="375" autoplay="autoplay" controls="controls" ></img>
+  		</div>
   		<canvas id="canvas" width="500" height="375"></canvas>
   		<canvas id="canvas2" width="500" height="375"></canvas>
   		<video id="recorded" width="500" height="375" autoplay="autoplay" controls="controls"></video>
@@ -22,8 +24,6 @@
 		 		<button class="btn btn-default" type="button"  id="cloud-save" data-toggle="modal" data-target="#saveMediaModal"><span class="fa fa-dropbox"></span> Upload to Dropbox</button>
 		   </div>
 		   <div class="btn-group2">
-		 		<button class="btn btn-default" type="button" id="audio-on"><span class="fa fa-microphone" ></span> Audio On</button>
-		 		<button class="btn btn-default" type="button" id="audio-off"><span class="fa fa-microphone-slash" ></span> Audio Off</button>
 		 		<button class="btn btn-default" type="button" id="grayscale"><span class="fa fa-delicious"></span> Toggle Filters</button>
 		   </div>	   
 	   </div>
