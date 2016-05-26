@@ -22,6 +22,9 @@ import com.rcctv.validators.ForgotPasswordFormValidator;
 import com.rcctv.validators.ResetPasswordFormValidator;
 import com.rcctv.validators.SignupFormValidator;
 
+/*
+ * Defines the endpoints and views for the web application.
+ */
 @Controller
 public class MainController {
 	
@@ -30,7 +33,6 @@ public class MainController {
 	private SignupFormValidator signupFormValidator;
 	private ForgotPasswordFormValidator forgotPasswordFormValidator;
 	private ResetPasswordFormValidator resetPasswordFormValidator;
-
 	
 	@Autowired
 	public MainController(MailSender mailSender, UserService userService,
@@ -45,6 +47,9 @@ public class MainController {
 		
 	}
 	
+	/* 
+	 * Initialises the valiadtion classes to each form.
+	 */
 	@InitBinder("signupForm")
 	protected void initSignupBinder(WebDataBinder binder) {
 		binder.setValidator(signupFormValidator);
@@ -60,14 +65,12 @@ public class MainController {
 		binder.setValidator(resetPasswordFormValidator);
 	}
 	
+	/*
+	 * sets the home page endpoint and returns the home view.
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
 		return "home";
-	}
-	
-	@RequestMapping(value = "/webcam", method = RequestMethod.GET)
-	public String userMain(Model model) {
-		return "user-main";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
@@ -78,6 +81,12 @@ public class MainController {
 		
 	}
 	
+	/*
+	 * sets the functionality of the signup page when a form is submitted.
+	 * Checks to see if an error occurred 
+	 * tells the user service to call the signup method passing a signup form.
+	 * displays on screen message and redirects back to login page.
+	 */
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(@ModelAttribute("signupForm") @Valid SignupForm signupForm,
 			BindingResult result, RedirectAttributes redirectAttributes) {
@@ -86,11 +95,16 @@ public class MainController {
 			return "signup";
 		
 		userService.signup(signupForm);
-		
 		Utilities.flash(redirectAttributes, "success", "signupSuccess");
 		
 		return "redirect:/login";
 
+	}
+	
+	@RequestMapping(value = "/webcam", method = RequestMethod.GET)
+	public String userMain(Model model) {
+    	
+		return "user-main";
 	}
 	
 	@RequestMapping(value = "/forgot-password", method = RequestMethod.GET)
@@ -101,7 +115,7 @@ public class MainController {
 	}
 
 	/**
-	 * Forgot password
+	 * Forgot password controller 
 	 */
 	@RequestMapping(value = "/forgot-password", method = RequestMethod.POST)
 	public String forgotPassword(
@@ -145,5 +159,5 @@ public class MainController {
 
 		return "redirect:/login";
 	}
-
+	
 }

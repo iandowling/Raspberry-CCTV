@@ -3,6 +3,9 @@ package com.rcctv.mail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/*
+ * creates a mock mail server for testing purposes which writes to the console instead.
+ */
 public class MockMailSender implements MailSender {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MockMailSender.class);

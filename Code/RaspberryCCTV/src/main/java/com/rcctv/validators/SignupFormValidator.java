@@ -10,6 +10,9 @@ import com.rcctv.domain.SignupForm;
 import com.rcctv.entities.User;
 import com.rcctv.repositories.UserRepository;
 
+/*
+ * Sets the validation errors for the signup form validation.
+ */
 @Component
 public class SignupFormValidator extends LocalValidatorFactoryBean {
 	

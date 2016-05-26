@@ -19,8 +19,10 @@ import com.rcctv.entities.User;
 import com.rcctv.services.UserService;
 import com.rcctv.util.Utilities;
 
+/*
+ * Defines the endpoints and views for the user functionality.
+ */
 @Controller
-@RequestMapping("/users")
 public class UserController {
 	
 	private UserService userService;
@@ -30,7 +32,11 @@ public class UserController {
 		this.userService = userService;
 	}
 	
-	@RequestMapping("/{verificationCode}/verify")
+	/*
+	 * calls the userService to implement the verify method when this endpoint is called.
+	 * user is logged out and redirected to login.
+	 */
+	@RequestMapping("/users/{verificationCode}/verify")
 	public String verify(@PathVariable("verificationCode") String verificationCode,
 			RedirectAttributes redirectAttributes,
 			HttpServletRequest request) throws ServletException {
@@ -43,15 +49,19 @@ public class UserController {
 
 	}
 	
-    @RequestMapping(value = "/{userId}")
+	/*
+	 * returns user page for specific users.
+	 */
+    @RequestMapping(value = "/users/{userId}")
     public String getById(@PathVariable("userId") long userId, Model model) {
     	model.addAttribute(userService.findOne(userId));
 	  	return "user";
     }
-    
-     
-    
-    @RequestMapping(value = "/{userId}/edit")
+
+	/* 
+	 * on the users edit endpoint display a user edit form within the user-edit view.
+	 */
+    @RequestMapping(value = "/users/{userId}/edit")
     public String edit(@PathVariable("userId") long userId, Model model) {
     	
 		User user = userService.findOne(userId);
@@ -64,7 +74,7 @@ public class UserController {
 
     }
     
-	@RequestMapping(value = "/{userId}/edit", method = RequestMethod.POST)
+	@RequestMapping(value = "/users/{userId}/edit", method = RequestMethod.POST)
 	public String edit(@PathVariable("userId") long userId,
 			@ModelAttribute("userEditForm") @Valid UserEditForm userEditForm,
 			BindingResult result, RedirectAttributes redirectAttributes,
@@ -80,7 +90,7 @@ public class UserController {
 		return "redirect:/login";
 	}
 	
-	@RequestMapping(value = "/{userId}/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/users/{userId}/delete", method = RequestMethod.GET)
     public String delete(RedirectAttributes redirectAttributes, HttpServletRequest request) throws ServletException {
     	
 		Utilities.flash(redirectAttributes, "success", "deleteSuccessful");
@@ -90,7 +100,7 @@ public class UserController {
 
     }
 	
-	@RequestMapping(value = "/{userId}/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "/users/{userId}/delete", method = RequestMethod.POST)
 	public String delete(@PathVariable("userId") long userId,
 			@ModelAttribute("userEditForm") @Valid UserEditForm userEditForm,
 			BindingResult result, RedirectAttributes redirectAttributes,

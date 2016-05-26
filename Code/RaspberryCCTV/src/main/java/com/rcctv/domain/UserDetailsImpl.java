@@ -10,6 +10,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.rcctv.entities.User;
 import com.rcctv.entities.User.Role;
 
+/*
+ * specify how the user details values are to be returned.
+ * UserDetails is a method built in to spring which spring security uses for authentication.
+ */
 public class UserDetailsImpl implements UserDetails {
 	
 

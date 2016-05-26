@@ -5,40 +5,40 @@
 		
 	<div id="video-container">
 	 	<div class="feed">
-  			<img src="https://192.168.2.84:8100/video_feed" id="videoElement" width="500" height="375" autoplay="autoplay" controls="controls" ></img>
+  			<img src="https://136.206.17.182:8100/video_feed" id="videoElement" width="500" height="375" autoplay="autoplay" ></img>
   		</div>
-  		<canvas id="canvas" width="500" height="375"></canvas>
   		<canvas id="canvas2" width="500" height="375"></canvas>
   		<video id="recorded" width="500" height="375" autoplay="autoplay" controls="controls"></video>
 		
 		<div class="camera-controls">
-		 	<div class="btn-group2">
-		 	  	<button class="btn btn-default" type="button"  id="clear"><span class="fa fa-remove"></span> Clear</button>		
+			<div class="btn-group2">
+		 		<button class="btn btn-default" type="button" id="grayscale"><span class="fa fa-delicious"></span> Toggle Filters</button>
 		 		<button class="btn btn-default" type="button"  id="photo"><span class="fa fa-camera-retro"></span> Take Photo</button>
+		 		<button class="btn btn-default" type="button"  id="clear"><span class="fa fa-remove"></span> Clear</button>	
+		   </div>
+		   <br />
+		 	<div class="btn-group2">
+		 		
 		 		<button class="btn btn-default" type="button"  id="record"><span class="fa fa-video-camera" ></span> Start Recording</button>
 		 		<button class="btn btn-default" type="button"  id="stop"><span class="fa fa-stop"></span> Stop Recording</button>
 		 	</div>
 		 	<div class="btn btn-group2">
-		 		<button class="btn btn-default" type="button"  id="saveImg"><span class="fa fa-save"></span> Save Image</button>
-		 		<button class="btn btn-default" type="button"  id="saveVideo"><span class="fa fa-save"></span> Download Video</button>
+		 		<button type="submit" class="btn btn-default" type="button"  id="saveImg"><span class="fa fa-save"></span> Save Image</button>
 		 		<button class="btn btn-default" type="button"  id="cloud-save" data-toggle="modal" data-target="#saveMediaModal"><span class="fa fa-dropbox"></span> Upload to Dropbox</button>
-		   </div>
-		   <div class="btn-group2">
-		 		<button class="btn btn-default" type="button" id="grayscale"><span class="fa fa-delicious"></span> Toggle Filters</button>
 		   </div>	   
 	   </div>
    </div>
   	   <br/>
    <div class="text-to-speech">
-	<div class="col-lg-8">
-   		<div class="input-group">
-	      <input type="text" name="text" class="form-control" id="speech" placeholder="Warn intruder..."/>
-	      <span class="input-group-btn">
-	        <button class="btn btn-default" type="button" onclick="responsiveVoice.speak($('#speech').val());"><span class="fa fa-send"></span></button>
-	      </span>
-  		</div><!-- /input-group -->
-	</div><!-- /.col-lg-6 -->
-  </div>
+		<div class="col-lg-8">
+	   		<div class="input-group">
+		      <input type="text" name="text" class="form-control" id="speech" placeholder="Warn intruder..."/>
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="button" onclick="responsiveVoice.speak($('#speech').val());"><span class="fa fa-send"></span></button>
+		      </span>
+	  		</div><!-- /input-group -->
+		</div><!-- /.col-lg-6 -->
+	  </div>
   <br /> 
 </div>
 

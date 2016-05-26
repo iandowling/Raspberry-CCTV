@@ -1,17 +1,10 @@
 
+/*
+ * This javascript sets the home 
+ * 
+ * 
+ */
 (function($) {
-    "use strict";
-
-    /*$('body').scrollspy({
-        target: '.navbar-static-top',
-        offset: 60
-    });
-
-    $('#topNav').affix({
-        offset: {
-            top: 200
-        }
-    });*/
     
     $('#toggleVideo').click(function(){
     	   $('video-background').css('/public/images/dog.gif','/public/images/window.gif');

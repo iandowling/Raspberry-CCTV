@@ -6,6 +6,9 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import com.rcctv.domain.ResetPasswordForm;
 
+/*
+ * Sets the validation errors for the reset password validation.
+ */
 @Component
 public class ResetPasswordFormValidator extends LocalValidatorFactoryBean {
 	

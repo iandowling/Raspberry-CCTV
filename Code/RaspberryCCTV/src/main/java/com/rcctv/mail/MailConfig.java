@@ -5,6 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.mail.javamail.JavaMailSender;
 
+/*
+ * sets the which mail configuration depending on environment.
+ */
 @Configuration
 public class MailConfig {
 	

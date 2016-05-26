@@ -1,5 +1,8 @@
 package com.rcctv.entities;
 
+/*
+ * Creates the user table and specifies the attributes and their components. 
+ */
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,6 +29,7 @@ public class User {
 	public static final int NAME_MAX = 50;
 	public static final String EMAIL_PATTERN = "[A-Za-z0-9._%-+]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
 	public static final int RANDOM_CODE_LENGTH = 16;
+	public static final int VERFICIATION_CODE_LENGTH = 16;
 	public static final int PASSWORD_MAX = 30;
 	
 	public static enum Role {
@@ -46,7 +50,7 @@ public class User {
 	@Column(nullable = false)
 	private String password;
 	
-	@Column(length = 16)
+	@Column(length = VERFICIATION_CODE_LENGTH)
 	private String verificationCode;
 	
 	@Column(length = RANDOM_CODE_LENGTH)
@@ -110,7 +114,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 	public boolean isAdmin() {
 		return roles.contains(Role.ADMIN);
 	}

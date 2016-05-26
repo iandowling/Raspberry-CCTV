@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +22,8 @@
    	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 	<link rel="shortcut icon" type="image/png" sizes="16x16" href="./public/images/favicon/logo.png"/>
 	<link type="text/css" rel="stylesheet" href="./public/css/style.css"/>
-	<link type="application/javascript" href="./public/js/home.js"/>
 	<link type="application/javascript" href="./public/js/webcam.js"/>
-	<link type="application/javascript" href="./public/js/recordVideo.js"/>
-	<link type="application/javascript" href="./public/js/face-recognition.js"/>
-	<link type="application/javascript" href="./public/js/vendor/tracking-min.js"/>
-	<link type="application/javascript" href="./public/js/data/face-min.js"/>
-	<link rel="manifest" href="/manifest.json"/>
+	<link type="application/javascript" href="./public/js/home.js"/>
 	
 	<title>Raspberry CCTV</title>
 

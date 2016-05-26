@@ -4,6 +4,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/*
+ * sets the default view controllers
+ */
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
 	
@@ -13,5 +16,5 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/login").setViewName("login");
       
     }
-
+    
 }

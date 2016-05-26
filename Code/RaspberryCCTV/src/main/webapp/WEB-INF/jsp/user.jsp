@@ -1,4 +1,4 @@
-<%@include file="includes/header.jsp"%>	
+<%@include file="includes/users-header.jsp"%>	
 
 <div class="user">
   <div class="panel panel-default">

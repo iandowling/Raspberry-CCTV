@@ -13,6 +13,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.rcctv.domain.UserDetailsImpl;
 import com.rcctv.entities.User;
 
+/*
+ * Class to set different functionality,
+ * incl. active profiles and on screen vaildation messages.
+ */
 @Component
 public class Utilities {
 	
@@ -30,7 +34,6 @@ public class Utilities {
 		
 	}
 	
-    
 	private static String activeProfiles;
 	
     @Value("${spring.profiles.active}")
@@ -42,8 +45,11 @@ public class Utilities {
     	return activeProfiles.equals("dev");
     }
     
+	/*
+	 * set the url dependeding on environment
+	 */
     public static String hostUrl() {
-		return (isDev() ? "http://192.168.2.37:8080/RaspberyCCTV" : "https://192.168.2.37:8443/RaspberryCCTV");
+		return (isDev() ? "http://136.206.17.182:8080/RaspberyCCTV" : "https://136.206.17.182:8443/RaspberryCCTV");
 	}
 	
 	private static MessageSource messageSource;
@@ -57,7 +63,10 @@ public class Utilities {
 		if (!valid)
 			throw new RuntimeException(getMessage(msgContent, args));
 	}
-
+	
+	/*
+	 * get the authenication details
+	 */
 	public static User getSessionUser() {
 		UserDetailsImpl auth = getAuth();
 		return auth == null ? null : auth.getUser();

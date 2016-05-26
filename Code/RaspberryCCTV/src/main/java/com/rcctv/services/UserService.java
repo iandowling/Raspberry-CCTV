@@ -8,6 +8,9 @@ import com.rcctv.domain.SignupForm;
 import com.rcctv.domain.UserEditForm;
 import com.rcctv.entities.User;
 
+/*
+ * sets the methods to be used by the userService to interact with the database.
+ */
 public interface UserService {
 	
 	public abstract void signup(SignupForm signupForm);
@@ -24,5 +27,5 @@ public interface UserService {
 	public abstract void update(long userId, UserEditForm userEditForm);
 	
 	public abstract void delete(long userId);
-	
+		
 }

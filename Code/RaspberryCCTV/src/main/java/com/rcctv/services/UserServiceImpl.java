@@ -28,6 +28,10 @@ import com.rcctv.mail.MailSender;
 import com.rcctv.repositories.UserRepository;
 import com.rcctv.util.Utilities;
 
+/*
+ * Implements the methods set in the userService interface 
+ * These methods communicate with the database.
+ */
 @Service
 @Transactional(propagation=Propagation.SUPPORTS, readOnly=true)
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -37,7 +41,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	private UserRepository userRepository;
 	private PasswordEncoder passwordEncoder;
     private MailSender mailSender;
-   
+    
 	@Autowired
 	public void setUserRepository(UserRepository userRepository) {
 		this.userRepository = userRepository;
@@ -53,6 +57,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		this.mailSender = mailSender;
 	}
 
+	/*
+	 * Implements the back end functionality of the signup form.
+	 * Uses transactional functionality - rollback
+	 * @see com.rcctv.services.UserService#signup(com.rcctv.domain.SignupForm)
+	 */
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 	public void signup(SignupForm signupForm) {
@@ -64,6 +73,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		user.setVerificationCode(RandomStringUtils.randomAlphanumeric(16));
 		userRepository.save(user);
 		
+		/*
+		 * On user submission send email verification.
+		 */
 		TransactionSynchronizationManager.registerSynchronization(
 			    new TransactionSynchronizationAdapter() {
 			        @Override
@@ -79,7 +91,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		    });
 		
 	}
-
+	
+	/*
+	 * get user by user name
+	 * @see org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername(java.lang.String)
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
@@ -89,7 +105,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 		return new UserDetailsImpl(user);
 	}
-
+	
+	/*
+	 * verify the user and change the users role.
+	 * @see com.rcctv.services.UserService#verify(java.lang.String)
+	 */
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 	public void verify(String verificationCode) {
@@ -105,9 +125,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		user.setVerificationCode(null);
 		user.getRoles().add(Role.ADMIN);
 		userRepository.save(user);
-		
+	
 	}
-
+	
+	/* 
+	 * Implement the forgot password back end functionality 
+	 * @see com.rcctv.services.UserService#forgotPassword(com.rcctv.domain.ForgotPasswordForm)
+	 */
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 	public void forgotPassword(ForgotPasswordForm form) {
@@ -118,6 +142,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		user.setForgotPasswordCode(forgotPasswordCode);
 		final User savedUser = userRepository.save(user);
 		
+		/* 
+		 * after the user fills out the form send forgot password link
+		 */
 		TransactionSynchronizationManager.registerSynchronization(
 			    new TransactionSynchronizationAdapter() {
 			        @Override
@@ -138,7 +165,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		String forgotPasswordLink = 
 				Utilities.hostUrl() + "/reset-password/" +
 				user.getForgotPasswordCode();
-		mailSender.send(user.getEmail(),
+				mailSender.send(user.getEmail(),
 				Utilities.getMessage("forgotPasswordSubject"),
 				Utilities.getMessage("forgotPasswordEmail", forgotPasswordLink));
 
@@ -161,7 +188,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		user.setPassword(passwordEncoder.encode(resetPasswordForm.getPassword().trim()));
 		userRepository.save(user);
 	}
-
+	
+	/*
+	 * return users info
+	 * @see com.rcctv.services.UserService#findOne(long)
+	 */
 	@Override
 	public User findOne(long userId) {
 		
@@ -177,6 +208,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 	}
 	
+	/*
+	 * update the users details
+	 * @see com.rcctv.services.UserService#update(long, com.rcctv.domain.UserEditForm)
+	 */
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 	public void update(long userId, UserEditForm userEditForm) {

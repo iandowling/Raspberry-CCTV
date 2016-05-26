@@ -448,10 +448,6 @@ span[id$=errors] {
 }
 
 #videoElement {
-	position: absolute;
-}
-
-#canvas {
 	position: relative;
 }
 
@@ -465,10 +461,6 @@ span[id$=errors] {
 
 #recorded {
 	position: relative;
-}
-
-.text-to-speech {
-	margin-right: 50px;
 }
 
 img {
@@ -496,8 +488,14 @@ img {
 }
 
 .text-to-speech{
-	margin-left: 20px;
 	padding-bottom: 20px;
+	margin-right: 30px;
+}
+
+#result {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-right: 30px;
 }
 
 .rect:hover * {

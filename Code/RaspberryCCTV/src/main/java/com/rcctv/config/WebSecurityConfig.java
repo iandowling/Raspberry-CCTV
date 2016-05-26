@@ -17,6 +17,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
 
+/*
+ * Contains the Spring security code
+ */
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
@@ -26,9 +29,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${spring.profiles.active}")
 	private String env;
     
+	/*
+	 * Injects the user service object to be used for user authentication
+	 */
     @Resource
 	private UserDetailsService userService;
     
+    /* 
+     * Initializes security objects instead of web.xml which was done in previous Spring versions.
+     */
     @Bean
     public HibernateJpaSessionFactoryBean sessionFactory() {
         return new HibernateJpaSessionFactoryBean();
@@ -50,7 +59,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-
+    
+    /*
+     * specifies which endpoints are accessible and not accessible to the average user.
+     * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.HttpSecurity)
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -61,8 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 		"/signup",
                 		"/forgot-password",
                 		"/reset-password/*",
-                		"/public/**",
-                		"/users/*").permitAll()
+                		"/public/**").permitAll()
                 .anyRequest().authenticated();
         http
             .formLogin()

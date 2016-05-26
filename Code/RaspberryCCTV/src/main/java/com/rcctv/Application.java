@@ -26,6 +26,9 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 	
+	/*
+	 * Runnable method
+	 */
 	public static void main(String[] args) {
         SpringApplication app = new SpringApplication(Application.class);
         app.setBannerMode(Banner.Mode.OFF);
@@ -37,6 +40,9 @@ public class Application extends SpringBootServletInitializer {
         return application.sources(Application.class);
     }
 	
+	/* 
+	 * These bean object initialize device view handlers that detect what device is being used.
+	 */
 	@Bean
 	public DeviceResolverHandlerInterceptor 
 	        deviceResolverHandlerInterceptor() {

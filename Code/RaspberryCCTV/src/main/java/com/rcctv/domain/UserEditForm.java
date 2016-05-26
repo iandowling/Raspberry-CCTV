@@ -8,6 +8,9 @@ import javax.validation.constraints.Size;
 import com.rcctv.entities.User;
 import com.rcctv.entities.User.Role;
 
+/*
+ * create the attributes of the user edit form. 
+ */
 public class UserEditForm {
 	
 	@NotNull

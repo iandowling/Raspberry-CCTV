@@ -9,6 +9,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.ResourceUtils;
 
+/*
+ * enable the web application to use https
+ */
 @Configuration
 public class SecureTomcatConfig {
 	

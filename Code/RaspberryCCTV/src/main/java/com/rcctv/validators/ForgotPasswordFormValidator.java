@@ -9,6 +9,9 @@ import com.rcctv.domain.ForgotPasswordForm;
 import com.rcctv.entities.User;
 import com.rcctv.repositories.UserRepository;
 
+/*
+ * Sets the validation errors for the forgot password validation.
+ */
 @Component
 public class ForgotPasswordFormValidator extends LocalValidatorFactoryBean {
 	

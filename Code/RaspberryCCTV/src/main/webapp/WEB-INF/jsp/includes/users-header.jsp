@@ -16,7 +16,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   	<meta name="description" content="An application with enables a user to view a live webcam feed."/>
   	<meta name="author" content="Ian Dowling"/>
-  	<base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/" />
+  	<base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/{userId}" />
 	<link href="./public/lib/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

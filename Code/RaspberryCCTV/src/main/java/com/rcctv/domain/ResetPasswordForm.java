@@ -5,6 +5,9 @@ import javax.validation.constraints.Size;
 
 import com.rcctv.entities.User;
 
+/*
+ * create the attributes of the reset password form. 
+ */
 public class ResetPasswordForm {
 	
 	@NotNull

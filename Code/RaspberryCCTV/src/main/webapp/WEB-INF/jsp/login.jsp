@@ -38,7 +38,7 @@
             </div>
 			
 			<button type="submit" class="btn btn-default" id="submit">Sign In</button>
-			<a class="btn btn-default" id="forgot-password" href="/forgot-password">Forgot Password</a>
+			<a class="btn btn-default" id="forgot-password" href="/RaspberryCCTV/forgot-password">Forgot Password</a>
 		</form:form>
 	</div>
   </div>

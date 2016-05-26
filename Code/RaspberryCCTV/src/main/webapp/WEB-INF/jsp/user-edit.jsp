@@ -1,4 +1,4 @@
-<%@include file="includes/header.jsp"%>
+<%@include file="includes/users-header.jsp"%>
 
 <div class="user-edit">
  <div class="panel panel-default">
@@ -26,7 +26,7 @@
 			
 			<form:label path="password" class="col-lg-2 control-label">Password</form:label>
 			<div class="col-lg-10">
-				<form:input path="password" class="form-control" placeholder="Update your password." />
+				<form:input path="password" type="password" class="form-control" placeholder="Update your password." />
 				<form:errors cssClass="error" path="password" />
 				<p class="help-block">Update your password.</p>
 			</div>

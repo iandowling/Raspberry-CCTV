@@ -6,6 +6,9 @@ import javax.validation.constraints.Size;
 
 import com.rcctv.entities.User;
 
+/*
+ * create the attributes of the forget password form. 
+ */
 public class ForgotPasswordForm {
 	
 	@NotNull
